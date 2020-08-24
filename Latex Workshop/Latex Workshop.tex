@@ -1,0 +1,186 @@
+\documentclass[12pt]{beamer}
+
+\usepackage[utf8]{inputenc}
+
+\usepackage[T1]{fontenc}
+
+\usetheme{Warsaw}
+\usecolortheme{whale}
+
+\setbeamercolor{structure}{fg=red!80!black} %CHANGE SLIDE COLORS%
+\setbeamercolor*{item}{fg=white!70!black} %CHANGE BULLET POINT COLOR%
+\useinnertheme{circles} %Style of bullet points%
+\useoutertheme{split}
+
+\usepackage{graphicx}
+
+
+\begin{document}
+%%% HERE IS THE TITLE PAGE %%%
+	\author{Adam Ozer}
+
+	\title{Latex Workshop!}
+
+	\subtitle{Actually, it's a scruffy dude in a lab}
+
+	%\logo{}
+
+	\institute{University of Houston\\ Ph.D. Candidate}
+
+	\date{11/15/19... holy crap, semester is almost over!}
+
+	%\subject{}
+
+	%\setbeamercovered{transparent}
+
+	%\setbeamertemplate{navigation symbols}{}
+
+
+
+
+
+
+%%%%%%%% Title %%%%%%%%	
+
+	\frame[plain]{\maketitle}
+
+%%%%%%%% Introduction %%%%%%%%
+
+\section{The basics} %%% SECTION HEADER! %%%
+
+
+%SLIDE 1%
+\subsection{A regular old slide} %%% Subsection header %%%
+
+
+\begin{frame} %Begin a slide
+\frametitle{Hey, look, title for my slide!} % Slide title
+\begin{itemize} %Itemize
+	\item Oh snap! We're itemizing stuff!
+	\item Burak taught us this! He's awesome!
+	\begin{itemize}
+		\item citation: (Burak 2019)
+	\end{itemize}
+	\item \textbf{I can bold stuff!}
+	\item \textit{I can italicize stuff!}
+\end{itemize}
+\end{frame} %end slide
+
+
+\subsection{Doing bullet points one-by-one} %%% Subsection header %%%
+
+\begin{frame} %Pausing slides
+\frametitle{Pausing} % Slide title
+\begin{itemize} %Itemize
+	\item Pausing
+	\pause
+	\item For
+	\pause
+	\item Dramatic
+	\pause
+	\item Effect
+\end{itemize}
+\end{frame} %end slide
+
+
+\section{Displaying data} 
+
+\subsection{A pictures says 1000 words}
+
+%SLIDE 3 - Displaying pictures
+\begin{frame}
+\frametitle{The military has a reputation for making bad powerpoints}
+\begin{figure}
+           \begin{center}
+                     \includegraphics[scale=.20]{Goose.jpg}
+           \end{center}
+           \label{}
+\end{figure}
+\end{frame}
+
+
+\subsection{Displaying Tables}
+
+%SLIDE 3 - Displaying pictures
+\begin{frame}
+\frametitle{We can display tables}
+\begin{table} \centering 
+ \caption{Political Credibility Indices} 
+ \label{} 
+ \begin{tabular}{c c c c} 
+ \hline \\[-1.8ex] 
+ \textbf{Character} & \textbf{Expertise} \\ [0.5ex] 
+ \hline \\[-1.8ex] 
+
+ Fair & Knowledgeable  \\ 
+
+Honest & Qualified \\
+
+Unbiased & Experienced  \\
+
+Sincere & Competent  \\
+
+  \hline \\[-1.8ex] 
+$\alpha$ = .885 & $\alpha$ = .894\\
+ 
+  \hline \\[-1.8ex] 
+\end{tabular}
+\end{table}
+
+\begin{itemize} %Itemize
+	\item Note: not all the functions that work in a regular Latex file work in Beamer (e.g. adjustbox)
+\end{itemize}
+
+\end{frame}
+
+
+
+\subsection{Resources}
+
+\begin{frame} %Begin a slide
+\frametitle{Look here for slide themes and colors} % Slide title
+\begin{itemize} %Itemize
+	\item http://deic.uab.es/~iblanes/beamer_gallery/
+\end{itemize}
+\end{frame} %end slide
+
+
+\section{Bibtex}
+
+\begin{frame} %Begin a slide
+\frametitle{Writing a reference page is a pain} % Slide title
+\begin{figure}
+           \begin{center}
+                     \includegraphics[scale=.25]{ugh.jpg}
+           \end{center}
+           \label{}
+\end{figure}
+\end{frame} %end slide
+
+\begin{frame} %Begin a slide
+\frametitle{There's google scholar and code for that!} % Slide title
+\begin{figure}
+           \begin{center}
+                     \includegraphics[scale=.75]{code.png}
+           \end{center}
+           \label{}
+\end{figure}
+\end{frame} %end slide
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}

@@ -1,0 +1,146 @@
+\documentclass[12pt]{article}
+\usepackage{amsfonts, amsmath, amssymb, bm} %Math fonts and symbols
+\usepackage{dcolumn, multirow} % decimal-aligned columns, multi-row cells
+\usepackage{graphicx} % graphics commands
+\usepackage{subfig}
+\usepackage{float}
+\usepackage[margin=1in]{geometry} % sets page layout
+\usepackage{setspace}% allows toggling of double/single-spacing
+\usepackage{verbatim}% defines environment for un-evaluated code
+\usepackage{rotating}% defines commands for rotating text and floats
+\usepackage{natbib}% defines citation commands and environments.
+\bibpunct[, ]{(}{)}{,}{a}{}{,}
+\usepackage{url}
+\usepackage{caption}
+\usepackage{endnotes}
+\usepackage{psfrag}
+\usepackage{epstopdf}
+\usepackage{epsfig}
+\usepackage{hyperref}
+
+
+\title{Title to Awesome Project} % set the title of the document
+\author{Name \\ Affiliation \\  Department of Political Science \\email}
+
+
+\date{Date}%if you want today's date, you don't need this line
+
+
+\begin{document}
+\maketitle
+
+Here's some stuff you'll want to read.\\
+
+Start a new line.
+Don't start a new line. 
+
+Start new paragraph.
+
+\section{Intro}
+\subsection{subsection}
+\subsubsection{subsubsection}
+
+
+\section*{no star section}
+
+
+\begin{enumerate}
+  \item 1
+  \begin{itemize}
+    \item A
+    \item B
+    \item C
+  \end{itemize}
+  \item 2
+  \item 3
+\end{enumerate}
+
+
+{\LARGE LARGE}
+
+\tiny tiny
+
+\normalsize normalsize
+
+\doublespace
+
+\singlespace
+
+
+\indent \indent start
+
+
+\begin{verbatim}
+    \singlespace
+\end{verbatim}
+
+\begin{table}[htpb!]\caption{Assassination Attempts and MID Initiation, 1875-2010  \label{cross_init}}
+ \centering
+\begin{tabular}{l | c c c}\hline
+\hline
+\multicolumn{1}{c}{\textbf{}} & \textbf{No Assassination}  & \textbf{Assassination} & Total\\
+\multicolumn{1}{c}{\textbf{}} & \textbf{ Attempt}  & \textbf{Attempt} & \\
+\hline
+
+\textbf{No MID Initiation}  &       10,461              &   246        &   10,707    \\
+   \multicolumn{1}{c}{\%}&     85.65 \%         &  84.54 \%     &  85.63 \%      \\
+&&&\\
+\textbf{MID Initiation} &       1,752             &   45     &    1,797   \\
+     \multicolumn{1}{c}{\%}&     14.35 \%         & 15.46 \%   &   14.37 \% \\
+     &&&\\
+\hline
+Total                   &        12,213         &   291          &   12,504   \\
+
+\hline
+\multicolumn{3}{c}{\scriptsize{Pearson $\chi^2$ =  0.2890;   p $=$ 0.591.}}\\
+\end{tabular}
+\end{table}
+
+
+\begin{table}[htpb!]\caption{Assassinations and MID Targeting, 1875-2010   \label{cross_tar}}
+ \centering
+\begin{tabular}{l c c c}\hline
+\hline
+\multicolumn{1}{c}{\textbf{}} & \textbf{Assassination}  & \textbf{Assassination} & Total\\
+\multicolumn{1}{c}{\textbf{}} & \textbf{ Failure}  & \textbf{Success} & Total\\
+\hline
+
+\textbf{Not MID Target}  &       198              &   56        &   254   \\
+   \multicolumn{1}{c}{\%}&      83.54\%         &  94.92\%     &  85.81\%      \\
+&&&\\
+\textbf{MID Target} &       39            &   3    &   42   \\
+     \multicolumn{1}{c}{\%}&     16.46\%         & 5.08\%   &   14.19 \% \\
+     &&&\\
+\hline
+Total                   &        237        &   59         &   296  \\
+
+\hline
+\multicolumn{3}{c}{\scriptsize{Pearson $\chi^2$ =  5.0165 ;   p $=$ 0.025}}\\
+\end{tabular}
+\end{table}
+
+
+
+Table~\ref{cross_tar} has all the answers. 
+\citep{Achen:1978} 
+
+
+\citet{Achen:1978} said it's okay. 
+
+
+%\begin{figure}[h!]
+%\caption{Normal Density over [-4,4], $\mu$=0,  $\sigma$=1 with more
+%words to make the caption really long}\label{fig:onefig}
+%\centerline{\includegraphics[width=1\textwidth]{norm1.pdf}}
+%\end{figure}
+
+\newpage
+\singlespacing
+\section*{}
+\bibliographystyle{apsr}
+\bibliography{reference}
+
+
+
+
+\end{document}
