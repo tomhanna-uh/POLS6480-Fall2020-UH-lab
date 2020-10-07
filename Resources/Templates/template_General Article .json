@@ -1,0 +1,8 @@
+{
+"Name"        : "General Article ",
+"Author"      : "tomha",
+"Date"        : "2019-12-12",
+"Version"     : "5",
+"Description" : "General article template with title page: with title, subtitle,author, date;  page numberng starts at 2 on page after title page; reference page; Name/Title/Project headers; pdf metadata.",
+"License"     : "Creative Commons CC BY-SA"
+}
