@@ -1,5 +1,5 @@
-setwd("K:/Teaching/POLS 6480 statistics/Fall 2015 labs/") # change it for your wd
-hurricanes <- read.csv("hurricanes.csv")
+setwd("C:/R Studio Files/Teaching/POLS6480-Fall2020-UH-lab/Lab 5") # change it for your wd
+hurricanes <- read.csv("hurricanes(2).csv")
 attach(hurricanes)
 
 set.seed(87654321)

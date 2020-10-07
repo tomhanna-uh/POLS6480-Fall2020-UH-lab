@@ -1,8 +1,10 @@
 rm(list=ls()) # good idea to clear the environment just in case
 
+
+
 # Load the data & set wd
 source("http://www.openintro.org/stat/data/cdc.R")
-setwd("/Users/bpwaggo/Desktop")
+setwd("C:/R Studio Files/Teaching/POLS6480-Fall2020-UH-lab/Lab 6")
 
 ## First look at contingency tables: smoking and health (relationship between condition and unconditional distributions of variables)
 attach(cdc)

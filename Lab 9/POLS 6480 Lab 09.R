@@ -1,5 +1,8 @@
 rm(list=ls())
-experiment <- read.csv("C:/anorexia.csv")
+
+setwd("C:/R Studio Files/Teaching/POLS6480-Fall2020-UH-lab/Lab 9")
+
+experiment <- read.csv("anorexia.csv")
 treatment.b <- experiment[experiment$therapy == "b", ]
 treatment.f <- experiment[experiment$therapy == "f", ]
 control  <- experiment[experiment$therapy == "c", ]

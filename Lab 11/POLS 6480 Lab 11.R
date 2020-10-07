@@ -1,4 +1,10 @@
-UN <- read.csv("C:/UN-data.csv")
+#Clear the environment
+rm(list=ls())
+
+#Set Working Directory
+setwd("C:/R Studio Files/Teaching/POLS6480-Fall2020-UH-lab/Lab 11")
+
+UN <- read.csv("UN-data.csv")
 simple <- lm(Fert ~ as.numeric(Cont), data = UN)
 simple$coefficients
 UN$Contracept <- as.numeric(as.character(UN$Cont))

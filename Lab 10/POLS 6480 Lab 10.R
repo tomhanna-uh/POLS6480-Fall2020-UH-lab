@@ -1,4 +1,9 @@
-data <- read.csv("C:/Cruise.csv")
+rm(list=ls())
+
+#Set your working directory
+setwd("C:/R Studio Files/Teaching/POLS6480-Fall2020-UH-lab/Lab 10")
+
+data <- read.csv("Cruise.csv")
 leading <- data[data$Role == "Lead", ]
 counts <- table(leading$Rating)
 barplot(counts, ylab="Number", xlab="Rating") 
@@ -27,7 +32,7 @@ reg.multiple <- lm(Domestic ~ Freshness + Year, data = leading)
 reg.multiple$coefficients
 summary(reg.multiple)[4]
 
-cpidata <- read.csv("C:/cpi1983.csv")
+cpidata <- read.csv("cpi1983.csv")
 combined <- merge(leading, cpidata, by="Year")
 combined$constant = combined$Domestic/(10000*combined$Annual)
 cor(combined$constant, combined$Year)

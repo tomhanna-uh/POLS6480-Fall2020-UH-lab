@@ -1,5 +1,6 @@
 
 rm(list=ls())
+setwd("C:/R Studio Files/Teaching/POLS6480-Fall2020-UH-lab/Lab 4")
 
 ## 1
 # A
@@ -89,6 +90,7 @@ x
 load(url("http://www.openintro.org/stat/data/bdims.RData"))
 
 head(bdims) # most measurements are in diameters or girths
+
 
 # basic subsetting - create new dataframes
 mdims = subset(bdims, bdims$sex == 1)

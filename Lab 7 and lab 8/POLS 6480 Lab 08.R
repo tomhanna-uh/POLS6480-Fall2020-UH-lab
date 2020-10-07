@@ -1,5 +1,14 @@
 rm(list=ls())
-cereal <- read.csv("C:/cereal.csv"); attach(cereal)
+
+#Setting your working directory allows you to call the two files you'll need without putting
+#the full file path
+setwd("C:/R Studio Files/Teaching/POLS6480-Fall2020-UH-lab/Lab 7 and lab 8")
+
+#reads in the cereal.csv file - you'll need to either change C:/cereal.csv to match your file directory
+#or set your working directory and delete the C:/
+cereal <- read.csv("cereal.csv"); attach(cereal) 
+
+
 children <- cereal[Intended.for == "Children", ]
 adults <- cereal[Intended.for == "Adults", ]
 
@@ -21,7 +30,7 @@ p <- 2*(1-pt(t.welch,df.welch))
 t.test(children$Sugar, adults$Sugar, alternative="two.sided")
 t.test(cereal$Sugar ~ cereal$Intended.for)
 
-experiment <- read.csv("C:/anorexia.csv")
+experiment <- read.csv("anorexia.csv")
 treatment.b <- experiment[experiment$therapy == "b", ]
 treatment.f <- experiment[experiment$therapy == "f", ]
 control  <- experiment[experiment$therapy == "c", ]
