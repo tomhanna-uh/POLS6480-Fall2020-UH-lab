@@ -74,17 +74,46 @@ p <- 2*(1-pt(t.welch,df.welch))
 #First, look at the help file
 ?t.test
 
+#This code runs a t-test using the adults and childrens subsets
 t.test(children$Sugar, adults$Sugar, alternative="two.sided")
+
+#This code runs a t-test using the main datafram (cereal) and testing the 
+#the two options in the character vector "Intended.for"
 t.test(cereal$Sugar ~ cereal$Intended.for)
 
+#clearing the data
+rm(list=ls())
+
+#Setting your working directory allows you to call the two files you'll need without putting
+#the full file path
+setwd("C:/R Studio Files/Teaching/POLS6480-Fall2020-UH-lab/Lab 7 and lab 8")
+
+#A study reported by Brian Everett (University College, London) examined the effectiveness of two
+#different treatments for anorexia. Family therapy stresses the social causes of eating disorders 
+#and attempts to achieve desirable behavior by improving a family’s norms. Cognitive behavioral 
+#therapy stresses the psychological causes of eating disorders and attempts to achieve desirable 
+#behavior by retraining and focusing the individual’s mental powers.
+
+#read in the data from anorexia.csv and create a dataframe from it called "experiment"
 experiment <- read.csv("anorexia.csv")
+
+#We're subsetting the data by treatment type
+#family therapy - f
+#cognitive behavioral therapy - b
+#and a control group -  c
 treatment.b <- experiment[experiment$therapy == "b", ]
 treatment.f <- experiment[experiment$therapy == "f", ]
 control  <- experiment[experiment$therapy == "c", ]
 
+#We're going to look at some graphic presentation of the data
+#first using the subsets
 boxplot(treatment.f$after,treatment.b$after,control$after, horizontal=TRUE, 
         names=c("Family","Behavioral","Control"))
+
+#Now using the original dataset
 boxplot(experiment$after ~ experiment$therapy, horizontal = TRUE)
+
+#the order of presentation is different, but the results are the same
 
 t.test(treatment.f$after, control$after)
 t.test(treatment.f$after, control$after, alt="greater")
