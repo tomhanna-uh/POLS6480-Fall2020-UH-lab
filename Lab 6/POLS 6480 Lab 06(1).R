@@ -1,10 +1,9 @@
 rm(list=ls()) # good idea to clear the environment just in case
-
-
+setwd("C:/R Studio Files/Teaching/POLS6480-Fall2020-UH-lab/Lab 6")
 
 # Load the data & set wd
 source("http://www.openintro.org/stat/data/cdc.R")
-setwd("C:/R Studio Files/Teaching/POLS6480-Fall2020-UH-lab/Lab 6")
+
 
 ## First look at contingency tables: smoking and health (relationship between condition and unconditional distributions of variables)
 attach(cdc)
@@ -31,6 +30,8 @@ plot(jitter(f.cdc$height), f.cdc$weight)
 f.cdc$bmi <- 703*(f.cdc$weight/(f.cdc$height^2)) # BMI calculation
 hist(f.cdc$bmi, seq(12.5,74.5, 2)) # from to by
 
+boxplot(f.cdc$bmi ~ f.cdc$genhlth)
+
 underweight <- ifelse(f.cdc$bmi<18.5,c(1),c(0)) 
 regular <- ifelse(f.cdc$bmi>=18.5 & f.cdc$bmi<25,c(1),c(0))
 overweight <- ifelse(f.cdc$bmi>=25 & f.cdc$bmi<30,c(1),c(0))
@@ -55,6 +56,7 @@ pie(contingency[3,], main="overweight", col=slices)
 pie(contingency[4,], main="obese", col=slices)
 
 rm(list=ls()); par(mfrow=c(1,1))
+setwd("C:/R Studio Files/Teaching/POLS6480-Fall2020-UH-lab/Lab 6")
 
 # New Data on HISD Suspensions and the Chi-Square Test
 ## First, create the data and store 

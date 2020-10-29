@@ -12,20 +12,67 @@ cereal <- read.csv("cereal.csv"); attach(cereal)
 children <- cereal[Intended.for == "Children", ]
 adults <- cereal[Intended.for == "Adults", ]
 
+
+#2. Let us shift our attention to summary statistics, focusing on how many grams of sugar are contained in a serving of each cereal. To find the average and the standard deviation in each sample, type the following two lines of code:
+m1 <- mean(children$Sugar); s1 <- sd(children$Sugar)
+
+m2 <- mean(adults$Sugar); s2 <- sd(adults$Sugar)
+
+#: In the sample, do children’s cereals and adults’ cereals have similar average sugar content?
+
+#In the sample, do children’s and adults’ cereals have similar variability in their sugar content?
+
+#We can also look at this visually with a histogram
+
 par(mfrow=c(2,1))
 hist(children$Sugar, seq(0,16,2), main="")
 hist(adults$Sugar, seq(0,16,2), main="")
 par(mfrow=c(1,1))
 
-m1 <- mean(children$Sugar); s1 <- sd(children$Sugar); n1 <- length(children$Sugar)
-m2 <- mean(adults$Sugar); s2 <- sd(adults$Sugar); n2 <- length(adults$Sugar)
+#For the next part we need to create a variable to represent the n for each of the sets
+
+n1 <- length(children$Sugar)
+n2 <- length(adults$Sugar)
+
+#To get the t-stat we need the difference of means
 diff.means = m1-m2
+
+#We also need the combined standard error 
+#So this is not your father's standard error - we're comparing two datasets (or subsets)
+#So we get this combined standard error with this formula
+
 se.welch = sqrt((s1^2/n1)+(s2^2/n2))
+
+#The t-stat is the difference of means divided by the standard error
+
 t.welch = diff.means/se.welch
+
+#To use the t-test on the table we need to know the degrees of freedom
+
 A=s1^2/n1; B=s2^2/n2
 df.welch <- (A+B)^2/(A^2/(n1-1)+B^2/(n2-1))
+
+#Now we have what we need to find significane
+#You remember pnorm, qnorm, rnorm, etc.? Now we have the same things for Student's T-Distribution
+?qnorm
+
+?qt
+
+#So we will find the critical t-value (We could also find this with a t-table)
 t.critical <- qt(0.975, df.welch)
+
+##QUESTION - Without running the next line of code
+#Is the T-value we computed earlier (t.welch) significant at the .05 level? 
+
+#Or, we can compute the p-value directly in R
 p <- 2*(1-pt(t.welch,df.welch))
+
+#we use .975 rather than .95 and we have to multiply by 2
+#because R automatically assumes we are looking at one tail. 
+
+#Next, we are going to use R's built-in t test command and see what we get
+#First, look at the help file
+?t.test
 
 t.test(children$Sugar, adults$Sugar, alternative="two.sided")
 t.test(cereal$Sugar ~ cereal$Intended.for)
