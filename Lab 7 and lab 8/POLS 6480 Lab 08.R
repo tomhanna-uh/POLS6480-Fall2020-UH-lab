@@ -8,7 +8,7 @@ setwd("C:/R Studio Files/Teaching/POLS6480-Fall2020-UH-lab/Lab 7 and lab 8")
 #or set your working directory and delete the C:/
 cereal <- read.csv("cereal.csv"); attach(cereal) 
 
-
+#subsets into a dataframe with just children's cereal and one with just adult cereal
 children <- cereal[Intended.for == "Children", ]
 adults <- cereal[Intended.for == "Adults", ]
 
