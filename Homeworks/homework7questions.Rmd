@@ -1,0 +1,21 @@
+---
+title: "Untitled"
+author: "Tom Hanna"
+date: "11/13/2020"
+output: html_document
+---
+
+
+
+```
+#anorexia homework
+
+summary(treatment.f$before)
+summary(treatment.f$after)
+
+t.test(treatment.f$before, treatment.f$after, alt="less", paired = TRUE)
+
+t.test(treatment.f$after, treatment.f$before, alt="greater", paired = TRUE)
+```
+
+

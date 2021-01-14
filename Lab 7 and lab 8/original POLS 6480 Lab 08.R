@@ -1,5 +1,7 @@
 rm(list=ls())
-cereal <- read.csv("C:/cereal.csv"); attach(cereal)
+
+
+cereal <- read.csv("cereal.csv"); attach(cereal)
 children <- cereal[Intended.for == "Children", ]
 adults <- cereal[Intended.for == "Adults", ]
 

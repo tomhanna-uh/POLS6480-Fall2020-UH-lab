@@ -95,7 +95,15 @@ setwd("C:/R Studio Files/Teaching/POLS6480-Fall2020-UH-lab/Lab 7 and lab 8")
 #behavior by retraining and focusing the individual’s mental powers.
 
 #read in the data from anorexia.csv and create a dataframe from it called "experiment"
+
+
+
+
+
 experiment <- read.csv("anorexia.csv")
+
+
+
 
 #We're subsetting the data by treatment type
 #family therapy - f
@@ -133,4 +141,8 @@ plot(control$before, control$after, pch=19, xlim=c(70,100), ylim=c(70,110))
 abline(lm(after~before, data=control)); abline(a=0,b=1, col="grey")
 
 t.test(treatment.f$delta, control$delta, alt="greater")
+
+
+
+
 rm(list=ls())
